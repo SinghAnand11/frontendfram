@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const axiosi=axios.create({withCredentials:true,baseURL:"http://localhost:8000"})
+export const axiosi=axios.create({withCredentials:true,baseURL:"backendnodejsframe.azurewebsites.net"})
 
 export const signupUser=async(data)=>{
     try {
