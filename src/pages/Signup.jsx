@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import loginSignupImage from "../assest/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { imagetoBase64 } from "../utility/imagetoBase64";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectLoggedInUser, signupUserAsync } from "../features/auth/AuthSlice";
@@ -19,7 +17,6 @@ const Signup = () => {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm();
 
   const dispatch=useDispatch()
@@ -40,12 +37,6 @@ const Signup = () => {
 
   const handleShowConfirmPassword = () => {
     setShowConfirmPassword((prev) => !prev);
-  };
-
-  const handleUploadProfileImages = async (e) => {
-    const selected=await imagetoBase64(e.target.files[0])
-    console.log(selected)
-    setProfileImage(selected)
   };
 
   const onSubmit = (data) => {

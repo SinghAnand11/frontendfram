@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import CartProduct from "../component/cartProduct";
 import emptyCartImage from "../assest/empty.gif";
-import { toast } from "react-hot-toast";
 import { Navigate, useNavigate } from "react-router-dom";
 import { selectCartItems } from "../features/cart/CartSlice";
 import Header from "../component/Header";

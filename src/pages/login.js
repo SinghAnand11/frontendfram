@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import loginSignupImage from "../assest/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { clearErrors, loginUserAsync, selectError, selectLoggedInUser } from "../features/auth/AuthSlice";
@@ -12,14 +11,10 @@ import Alert from '@mui/material/Alert';
 
 
 const Login = () => {
-
-  const [showAlert,setShowAlert]=useState()
-
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm();
 
 

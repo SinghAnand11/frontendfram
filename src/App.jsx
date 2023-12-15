@@ -2,11 +2,9 @@ import "./App.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuthAsync, selectLoggedInUser, selectisAuthChecked } from "./features/auth/AuthSlice";
-import { getUserByIdAsync } from "./features/user/UserSlice";
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { Cart, Home, Login, Menu, Newproduct, Signup } from "./pages";
 import { Protected } from "./features/auth/components/Protected";
-import { checkAuth } from "./features/auth/AuthApi";
 import { getCartItemsByUserIdAsync } from "./features/cart/CartSlice";
 
 

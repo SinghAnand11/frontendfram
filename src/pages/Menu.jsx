@@ -4,23 +4,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import AllProduct from "../component/AllProduct";
 import { addCartItem, getProductByIdAsync, getProductsAsync, selectSelectedProduct, updateProductByIdAsync } from "../features/product/ProductSlice";
 import Header from "../component/Header";
-import { addToCartAsync, selectCartItems } from "../features/cart/CartSlice";
+import { addToCartAsync } from "../features/cart/CartSlice";
 import { selectLoggedInUser } from "../features/auth/AuthSlice";
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
-import { Box, Button, Icon, IconButton, Stack, TextField } from "@mui/material";
+import { IconButton,  TextField } from "@mui/material";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import Snackbar from '@mui/material/Snackbar';
-import Fade from '@mui/material/Fade';
 import Slide from '@mui/material/Slide';
 import Grow from '@mui/material/Grow';
 
 const Menu = () => {
   function SlideTransition(props) {
     return <Slide {...props} direction="up" />;
-  }
-  
-  function GrowTransition(props) {
-    return <Grow {...props} />;
   }
   
 
@@ -55,8 +50,6 @@ const Menu = () => {
   },[])
 
   const [productDisplay,setProductDisplay]=useState()
-
-  const cartItems=useSelector(selectCartItems)
   const user=useSelector(selectLoggedInUser)
   const selectedProduct=useSelector(selectSelectedProduct)
 
